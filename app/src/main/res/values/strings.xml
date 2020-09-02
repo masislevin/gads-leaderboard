@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">GADS LeaderBoard</string>
+    <string name="image_gads_logo">GADS Logo</string>
+
+    <!-- Fragment Tags -->
+    <string name="tag_learning_leaders">Learning Leaders</string>
+    <string name="tag_skill_iq_leaders">Skill IQ Leaders</string>
+
+    <!-- Image Placeholders - Content Description -->
+
+    <!-- Dummy Layout Placeholders -->
+    <string name="dummy_name">John Doe</string>
+    <string name="dummy_list_item_content_description">Lorean Ipsum Text, Country</string>
+</resources>
