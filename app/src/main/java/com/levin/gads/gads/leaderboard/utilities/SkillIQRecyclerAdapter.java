@@ -10,10 +10,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.levin.gads.gads.leaderboard.R;
 import com.levin.gads.gads.leaderboard.models.SkillIQModel;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class SkillIQRecyclerAdapter extends
         RecyclerView.Adapter<SkillIQRecyclerAdapter.ViewHolder> {
@@ -21,6 +23,7 @@ public class SkillIQRecyclerAdapter extends
     private static final String TAG = "LeaderBoardRecyclerAdapter";
 
     private ArrayList<SkillIQModel> topSkillIQLearners;
+    private static Context context;
 
     public SkillIQRecyclerAdapter(ArrayList<SkillIQModel> learners) {
         this.topSkillIQLearners = learners;
@@ -29,7 +32,7 @@ public class SkillIQRecyclerAdapter extends
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        Context context = parent.getContext();
+        context = parent.getContext();
         return new ViewHolder(LayoutInflater.from(context)
                 .inflate(R.layout.list_item, parent, false));
     }
@@ -61,11 +64,14 @@ public class SkillIQRecyclerAdapter extends
             topLearnerDetail = itemView.findViewById(R.id.text_leader_details);
         }
 
-        public  void Bind(SkillIQModel learner){
-            topLearnerBadge.setImageResource(R.drawable.image_skill_iq);
+        public void Bind(SkillIQModel learner){
+            Glide.with(context)
+                    .load(learner.badgeUrl)
+                    .placeholder(R.drawable.image_skill_iq)
+                    .into(topLearnerBadge);
             topLearnerName.setText(learner.name);
-            topLearnerDetail.setText(String.format(SKILL_IQ_DESCRIPTION_FORMAT, learner.score,
-                    learner.country));
+            topLearnerDetail.setText(String.format(Locale.getDefault(),
+                    SKILL_IQ_DESCRIPTION_FORMAT, learner.score, learner.country));
         }
     }
 }

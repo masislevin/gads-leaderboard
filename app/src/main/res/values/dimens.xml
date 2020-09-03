@@ -3,4 +3,10 @@
     <dimen name="standard_margin">8dp</dimen>
     <dimen name="standard_padding">4dp</dimen>
     <dimen name="image_square_dimension">100dp</dimen>
+
+    <dimen name="text_size_titles">20sp</dimen>
+    <dimen name="text_size_names">20sp</dimen>
+    <dimen name="text_size_learner_details">16sp</dimen>
+
+    <dimen name="view_pager_tab_indicator_height">5dp</dimen>
 </resources>

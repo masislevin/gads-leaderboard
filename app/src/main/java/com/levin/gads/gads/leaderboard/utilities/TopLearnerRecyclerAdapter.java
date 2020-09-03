@@ -10,14 +10,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.levin.gads.gads.leaderboard.R;
 import com.levin.gads.gads.leaderboard.models.TopLearnerModel;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class TopLearnerRecyclerAdapter extends RecyclerView.Adapter<TopLearnerRecyclerAdapter.ViewHolder> {
     private static final String TAG="TopLearnerRecyclerAdapter";
     private ArrayList<TopLearnerModel> topLearners;
+    private static Context context;
 
     public TopLearnerRecyclerAdapter(ArrayList<TopLearnerModel> learners) {
         this.topLearners = learners;
@@ -26,7 +29,7 @@ public class TopLearnerRecyclerAdapter extends RecyclerView.Adapter<TopLearnerRe
     @NonNull
     @Override
     public TopLearnerRecyclerAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        Context context = parent.getContext();
+        context = parent.getContext();
         return new TopLearnerRecyclerAdapter.ViewHolder(LayoutInflater.from(context)
                 .inflate(R.layout.list_item, parent, false));
     }
@@ -59,10 +62,13 @@ public class TopLearnerRecyclerAdapter extends RecyclerView.Adapter<TopLearnerRe
         }
 
         public  void Bind(TopLearnerModel learner){
-            topLearnerBadge.setImageResource(R.drawable.image_top_learner);
+            Glide.with(context)
+                    .load(learner.badgeUrl)
+                    .placeholder(R.drawable.image_skill_iq)
+                    .into(topLearnerBadge);
             topLearnerName.setText(learner.name);
-            topLearnerDetail.setText(String.format(SKILL_IQ_DESCRIPTION_FORMAT, learner.hours,
-                    learner.country));
+            topLearnerDetail.setText(String.format(Locale.getDefault(),
+                    SKILL_IQ_DESCRIPTION_FORMAT, learner.hours, learner.country));
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.levin.gads.gads.leaderboard;
+package com.levin.gads.gads.leaderboard.utilities;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

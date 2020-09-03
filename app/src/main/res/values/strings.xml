@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">GADS LeaderBoard</string>
+    <string name="leaderboard_title">LeaderBoard</string>
     <string name="image_gads_logo">GADS Logo</string>
 
     <!-- Fragment Tags -->
@@ -11,4 +12,17 @@
     <!-- Dummy Layout Placeholders -->
     <string name="dummy_name">John Doe</string>
     <string name="dummy_list_item_content_description">Lorean Ipsum Text, Country</string>
+
+    <!-- Gson Serializable Strings -->
+    <string name="gson_serializable_name">name</string>
+    <string name="gson_serializable_score">score</string>
+    <string name="gson_serializable_hours">hours</string>
+    <string name="gson_serializable_country">country</string>
+    <string name="gson_serializable_badge_url">badgeUrl</string>
+
+    <!-- API Resource URLs -->
+    <string name="api_part_hours">api/hours</string>
+    <string name="api_part_skill_iq">api/skilliq</string>
+    <string name="submit">Submit</string>
+
 </resources>
