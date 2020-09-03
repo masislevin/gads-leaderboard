@@ -42,7 +42,8 @@ public class TopSkillIQFragment extends Fragment{
     }
 
     private void init(){
-        LeaderBoardService service = LeaderBoardServiceBuilder.buildService(LeaderBoardService.class);
+        LeaderBoardService service = new LeaderBoardServiceBuilder(
+                getString(R.string.leaderboard_base_url)).buildService(LeaderBoardService.class);
         Call<ArrayList<SkillIQModel>> call = service.getTopSkillIQImprovementLearners();
         call.enqueue(new Callback<ArrayList<SkillIQModel>>() {
             @Override

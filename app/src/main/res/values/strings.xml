@@ -21,8 +21,16 @@
     <string name="gson_serializable_badge_url">badgeUrl</string>
 
     <!-- API Resource URLs -->
+    <string name="leaderboard_base_url">https://gadsapi.herokuapp.com/</string>
+    <string name="submission_base_url">https://docs.google.com/forms/d/e/</string>
+
     <string name="api_part_hours">api/hours</string>
     <string name="api_part_skill_iq">api/skilliq</string>
     <string name="submit">Submit</string>
+    <string name="project_submission">Project Submission</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email_address">Email Address</string>
+    <string name="project_on_github_link">Project on GITHUB (link)</string>
 
 </resources>
