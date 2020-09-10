@@ -8,7 +8,6 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.levin.gads.gads.leaderboard.models.SubmissionModel;
-import com.levin.gads.gads.leaderboard.utilities.LeaderBoardDialog;
 
 public class SubmissionActivity extends AppCompatActivity {
     private static final String TAG = "SubmissionActivity";
@@ -42,8 +41,7 @@ public class SubmissionActivity extends AppCompatActivity {
                         editTextEmail.getText().toString(),
                         editTextProjectUrl.getText().toString());
 
-                LeaderBoardDialog dialogFragment = new LeaderBoardDialog(v.getContext(), model);
-                dialogFragment.showConfirmationDialog();
+
             }
         });
     }

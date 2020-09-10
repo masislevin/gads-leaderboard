@@ -11,7 +11,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/btn_cancel_submission"
+            android:id="@+id/btn_submission_cancelled"
             android:layout_width="@dimen/submission_cancel_button"
             android:layout_height="@dimen/submission_cancel_button"
             android:layout_gravity="right"
@@ -28,6 +28,7 @@
             android:textAlignment="center"/>
 
         <Button
+            android:id="@+id/btn_submission_confirmed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_margin"
@@ -38,7 +39,6 @@
             android:textSize="@dimen/text_size_submission_title"
             android:textAllCaps="false"
             android:text="Yes"/>
-
 
     </LinearLayout>
 
