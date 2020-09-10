@@ -8,12 +8,7 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.levin.gads.gads.leaderboard.models.SubmissionModel;
-import com.levin.gads.gads.leaderboard.services.LeaderBoardService;
-import com.levin.gads.gads.leaderboard.services.SubmissionServiceBuilder;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import com.levin.gads.gads.leaderboard.utilities.LeaderBoardDialog;
 
 public class SubmissionActivity extends AppCompatActivity {
     private static final String TAG = "SubmissionActivity";
@@ -47,23 +42,8 @@ public class SubmissionActivity extends AppCompatActivity {
                         editTextEmail.getText().toString(),
                         editTextProjectUrl.getText().toString());
 
-                /* TODO: validations & error handling */
-
-                LeaderBoardService service = SubmissionServiceBuilder
-                        .buildService(LeaderBoardService.class);
-                Call<SubmissionModel> call = service.submitProject(model);
-                call.enqueue(new Callback<SubmissionModel>() {
-                    @Override
-                    public void onResponse(Call<SubmissionModel> call,
-                                           Response<SubmissionModel> response) {
-                        // inflate popup menu with success
-                    }
-
-                    @Override
-                    public void onFailure(Call<SubmissionModel> call, Throwable t) {
-                        // inflate popup menu with failure
-                    }
-                });
+                LeaderBoardDialog dialogFragment = new LeaderBoardDialog(v.getContext(), model);
+                dialogFragment.showConfirmationDialog();
             }
         });
     }
