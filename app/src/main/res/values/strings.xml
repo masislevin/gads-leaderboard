@@ -27,6 +27,8 @@
     <string name="api_part_hours">api/hours</string>
     <string name="api_part_skill_iq">api/skilliq</string>
     <string name="submit">Submit</string>
+
+    <!-- Submission details -->
     <string name="project_submission">Project Submission</string>
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
@@ -34,5 +36,6 @@
     <string name="project_on_github_link">Project on GITHUB (link)</string>
     <string name="alert_submission_success">Submission Successul</string>
     <string name="alert_submission_failure">Submission not Successful</string>
+    <string name="submission_confirmation_message"> Are you sure?</string>
 
 </resources>

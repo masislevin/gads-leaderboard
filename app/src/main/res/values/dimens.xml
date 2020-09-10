@@ -11,10 +11,15 @@
 
     <dimen name="text_size_titles">20sp</dimen>
     <dimen name="text_size_submission_title">30sp</dimen>
+    <dimen name="text_size_submission_message"> 40sp</dimen>
     <dimen name="text_size_names">20sp</dimen>
     <dimen name="text_size_learner_details">16sp</dimen>
 
     <dimen name="view_pager_tab_indicator_height">5dp</dimen>
 
     <dimen name="submission_drawable_dimension">200dp</dimen>
+    <dimen name="submission_cancel_button">70dp</dimen>
+    <dimen name="button_border">2dp</dimen>
+    <dimen name="button_border_radius">10dp</dimen>
+
 </resources>
