@@ -28,6 +28,9 @@ public class SubmissionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_submission);
+
+        /// show back button
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         model = new SubmissionModel(null, null, null, null);
 
         editTextFirstName = findViewById(R.id.tvFirstName);
@@ -63,5 +66,11 @@ public class SubmissionActivity extends AppCompatActivity {
                 });
             }
         });
+    }
+
+    @Override
+    public boolean onSupportNavigateUp(){
+        finish();
+        return true;
     }
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,94 +8,136 @@
     android:background="@color/color_black"
     tools:context=".SubmissionActivity">
 
-    <ImageView
-        android:id="@+id/image_gads_logo"
-        android:layout_width="match_parent"
-        android:layout_height="154dp"
-        android:contentDescription="@string/image_gads_logo"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/gads_logo"
-        tools:layout_editor_absoluteX="0dp" />
-
-    <EditText
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/project_submission"
-        android:textAlignment="center"
-        android:textColor="@color/color_orange"
-        android:textSize="@dimen/text_size_titles"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/image_gads_logo" />
-
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/layout_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/tvFirstName"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/standard_margin"
-            android:layout_weight="1"
-            android:background="@color/color_white"
-            android:padding="@dimen/standard_padding"
-            android:text="@string/first_name"
-            android:textSize="@dimen/text_size_names" />
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-        <EditText
-            android:id="@+id/tvLastName"
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:contentDescription="@string/image_gads_logo"
+                app:srcCompat="@drawable/gads_logo_a" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/standard_margin"
-            android:layout_weight="1"
-            android:background="@color/color_white"
-            android:padding="@dimen/standard_padding"
-            android:text="@string/last_name"
-            android:textSize="@dimen/text_size_names" />
+            android:text="@string/project_submission"
+            android:textAlignment="center"
+            android:textColor="@color/color_orange"
+            android:textSize="@dimen/text_size_submission_title"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/standard_margin"
+            android:background="@drawable/ic_gradient_line"/>
 
     </LinearLayout>
 
-    <EditText
-        android:id="@+id/tvEmailAddress"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:autofillHints=""
-        android:background="@color/color_white"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:padding="@dimen/standard_padding"
-        android:text="@string/email_address"
-        android:textSize="@dimen/text_size_names"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@id/layout_title">
 
-    <EditText
-        android:id="@+id/tvProjectUrl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:background="@color/color_white"
-        android:padding="@dimen/standard_padding"
-        android:text="@string/project_on_github_link"
-        android:textSize="@dimen/text_size_names"
-        app:layout_constraintTop_toBottomOf="@+id/tvEmailAddress" />
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnSubmitProject"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/rounded_button_layout"
-        android:backgroundTint="@color/color_orange"
-        android:text="@string/submit"
-        android:textColor="@color/color_white"
-        android:textSize="@dimen/text_size_titles"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvProjectUrl" />
+            <LinearLayout
+                android:id="@+id/names"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/standard_margin"
+                android:layout_marginRight="@dimen/standard_margin"
+                android:layout_marginTop="@dimen/spacing_margin"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/tvFirstName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/standard_margin"
+                    android:layout_weight="1"
+                    android:background="@color/color_white"
+                    android:padding="@dimen/standard_padding"
+                    android:text="@string/first_name"
+                    android:textSize="@dimen/text_size_names" />
+
+                <EditText
+                    android:id="@+id/tvLastName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/standard_margin"
+                    android:layout_weight="1"
+                    android:background="@color/color_white"
+                    android:padding="@dimen/standard_padding"
+                    android:text="@string/last_name"
+                    android:textSize="@dimen/text_size_names" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/tvEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_white"
+                android:inputType="textEmailAddress"
+                android:padding="@dimen/standard_padding"
+                android:layout_marginLeft="@dimen/standard_margin"
+                android:layout_marginRight="@dimen/standard_margin"
+                android:layout_marginTop="@dimen/spacing_margin"
+                android:text="@string/email_address"
+                android:textSize="@dimen/text_size_names"/>
+
+            <EditText
+                android:id="@+id/tvProjectUrl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_white"
+                android:padding="@dimen/standard_padding"
+                android:layout_marginLeft="@dimen/standard_margin"
+                android:layout_marginRight="@dimen/standard_margin"
+                android:layout_marginTop="@dimen/spacing_margin"
+                android:text="@string/project_on_github_link"
+                android:textSize="@dimen/text_size_names"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/spacing_margin">
+
+                <Button
+                    android:id="@+id/btnSubmitProject"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/rounded_button_layout"
+                    android:backgroundTint="@color/color_orange"
+                    android:text="@string/submit"
+                    android:textColor="@color/color_white"
+                    android:textSize="@dimen/text_size_titles" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

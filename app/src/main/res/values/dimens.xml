@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="standard_margin">8dp</dimen>
+    <dimen name="spacing_margin">60dp</dimen>
     <dimen name="standard_padding">4dp</dimen>
     <dimen name="image_square_dimension">100dp</dimen>
 
+    <dimen name="rounded_button_radius">30dp</dimen>
+    <dimen name="rounded_text_view_radius">10dp</dimen>
+
     <dimen name="text_size_titles">20sp</dimen>
+    <dimen name="text_size_submission_title">30sp</dimen>
     <dimen name="text_size_names">20sp</dimen>
     <dimen name="text_size_learner_details">16sp</dimen>
 
