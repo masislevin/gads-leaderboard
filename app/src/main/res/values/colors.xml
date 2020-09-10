@@ -7,4 +7,6 @@
     <color name="color_white">#FFFFFF</color>
     <color name="color_black">#000000</color>
     <color name="color_orange">#FFA500</color>
+    <color name="color_red">@android:color/holo_red_dark</color>
+    <color name="color_green">@android:color/holo_green_dark</color>
 </resources>
