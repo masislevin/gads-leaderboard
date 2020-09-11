@@ -1,4 +1,4 @@
-# GADS 2020 LEADERBOARD
+# GADS 2020 LEADERBOARD SAMPLE
 
 A sample Android Project that implements a mobile design of the GADS 2020 Leaderboard
 
