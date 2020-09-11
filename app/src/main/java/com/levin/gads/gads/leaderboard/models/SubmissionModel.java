@@ -2,7 +2,7 @@ package com.levin.gads.gads.leaderboard.models;
 
 import com.google.gson.annotations.SerializedName;
 
-public class SubmissionModel {
+public class SubmissionModel{
     @SerializedName("entry.1877115667")
     public String firstName;
     @SerializedName("entry.2006916086")
@@ -17,5 +17,15 @@ public class SubmissionModel {
         this.lastName = lastName;
         this.email = email;
         this.projectUrl = projectUrl;
+    }
+
+    @Override
+    public String toString() {
+        return "SubmissionModel{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", projectUrl='" + projectUrl + '\'' +
+                '}';
     }
 }

@@ -14,6 +14,7 @@
             android:id="@+id/imageView3"
             android:layout_width="@dimen/submission_drawable_dimension"
             android:layout_height="@dimen/submission_drawable_dimension"
+            android:layout_marginTop="@dimen/spacing_margin"
             android:layout_gravity="center"
             android:contentDescription="@string/alert_submission_success"
             app:srcCompat="@drawable/ic_baseline_check_circle_24" />
@@ -22,6 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Submission Successful"
+            android:layout_marginBottom="@dimen/spacing_margin"
             android:textSize="@dimen/text_size_submission_title"
             android:textStyle="bold"
             android:textAlignment="center"/>

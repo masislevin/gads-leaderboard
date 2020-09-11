@@ -12,6 +12,7 @@ import com.levin.gads.gads.leaderboard.models.SubmissionModel;
 
 public class SubmissionActivity extends AppCompatActivity {
     private static final String TAG = "SubmissionActivity";
+    private static final String FRAGMENT_TAG = "fragment_confirm_submission";
 
     private static SubmissionModel model;
     private EditText editTextFirstName;
@@ -36,14 +37,18 @@ public class SubmissionActivity extends AppCompatActivity {
         final Button button = findViewById(R.id.btnSubmitProject);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                model = new SubmissionModel(editTextFirstName.getText().toString(),
-                        editTextLastName.getText().toString(),
-                        editTextEmail.getText().toString(),
-                        editTextProjectUrl.getText().toString());
+                //model = new SubmissionModel(editTextFirstName.getText().toString(),
+                //        editTextLastName.getText().toString(),
+                //        editTextEmail.getText().toString(),
+                //        editTextProjectUrl.getText().toString());
+
+                model = new SubmissionModel("Levin", "Masis",
+                        "masislevin@gmail.com",
+                        "https://github.com/masislevin/gads-leaderboard");
 
                 FragmentTransaction fragmentManager = getSupportFragmentManager().beginTransaction();
-                ConfirmFragment confirmFragment = ConfirmFragment.newDialogInstance();
-                confirmFragment.show(fragmentManager, "fragment_confirm_submission");
+                ConfirmFragment confirmFragment = ConfirmFragment.newDialogInstance(model);
+                confirmFragment.show(fragmentManager, FRAGMENT_TAG);
             }
         });
 
