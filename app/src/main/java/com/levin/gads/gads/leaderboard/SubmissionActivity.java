@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.levin.gads.gads.leaderboard.models.SubmissionModel;
 
@@ -24,14 +25,13 @@ public class SubmissionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_submission);
 
         /// show back button
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         model = new SubmissionModel(null, null, null, null);
 
         editTextFirstName = findViewById(R.id.tvFirstName);
         editTextLastName = findViewById(R.id.tvLastName);
         editTextEmail = findViewById(R.id.tvEmailAddress);
         editTextProjectUrl = findViewById(R.id.tvProjectUrl);
-
 
         final Button button = findViewById(R.id.btnSubmitProject);
         button.setOnClickListener(new View.OnClickListener() {
@@ -41,14 +41,12 @@ public class SubmissionActivity extends AppCompatActivity {
                         editTextEmail.getText().toString(),
                         editTextProjectUrl.getText().toString());
 
-
+                FragmentTransaction fragmentManager = getSupportFragmentManager().beginTransaction();
+                ConfirmFragment confirmFragment = ConfirmFragment.newDialogInstance();
+                confirmFragment.show(fragmentManager, "fragment_confirm_submission");
             }
         });
-    }
 
-    @Override
-    public boolean onSupportNavigateUp(){
-        finish();
-        return true;
+
     }
 }
