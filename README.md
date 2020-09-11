@@ -4,8 +4,8 @@ A sample Android Project that implements a mobile design of the GADS 2020 Leader
 
 ## Environmentnvironment
 
-> Android Studio : 4.0.1
-> JDK : 1.8.0
+[github] Android Studio : 4.0.1
+[github] JDK : 1.8.0
 
 ## Useful libraries
 
