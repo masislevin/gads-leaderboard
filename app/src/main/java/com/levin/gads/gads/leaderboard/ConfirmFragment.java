@@ -2,6 +2,7 @@ package com.levin.gads.gads.leaderboard;
 
 import android.app.Dialog;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +26,7 @@ public class ConfirmFragment extends DialogFragment {
     private static final String TAG = "ConfirmFragment";
     private static final String SUCCESS_FRAGMENT_TAG = "fragment_submission_successful";
     private static final String FAILURE_FRAGMENT_TAG = "fragment_submission_failed";
+    private static final int DELAY_DIALOG_DISMISS = 3000;
 
     private static SubmissionModel model;
     private Button submissionConfirmed;
@@ -86,7 +88,7 @@ public class ConfirmFragment extends DialogFragment {
     }
 
     private void submitProject(){
-        dismiss();
+        //dismiss();
         LeaderBoardService service = SubmissionServiceBuilder
                 .buildService(LeaderBoardService.class);
         Call<SubmissionModel> call = service.submitProject(model);
@@ -94,15 +96,25 @@ public class ConfirmFragment extends DialogFragment {
             @Override
             public void onResponse(Call<SubmissionModel> call, Response<SubmissionModel> response) {
                 Log.d(TAG, "onResponse: Submission successful.");
-                // show success dialog
+                getDialog().setContentView(R.layout.fragment_submission_success);
             }
 
             @Override
             public void onFailure(Call<SubmissionModel> call, Throwable t) {
                 Log.d(TAG, "onResponse: Submission NOT successful.");
-                // show failure dialog
+                getDialog().setContentView(R.layout.fragment_submission_failed);
             }
         });
+        dialogDelayDismiss();
+    }
+
+    private void dialogDelayDismiss() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                dismiss();
+            }
+        }, DELAY_DIALOG_DISMISS);
     }
 
 }

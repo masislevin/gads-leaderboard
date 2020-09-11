@@ -1,5 +1,6 @@
 package com.levin.gads.gads.leaderboard;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +27,17 @@ public class SubmissionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_submission);
 
         /// show back button
+        Button toolbarBackButton = findViewById(R.id.toolbar_back);
+        toolbarBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), LeaderboardActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        //toolbar.setNavigationIcon(R.drawable.ic_baseline_arrow_back_24);
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         model = new SubmissionModel(null, null, null, null);
 

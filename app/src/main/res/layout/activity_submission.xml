@@ -16,35 +16,53 @@
         android:orientation="vertical">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/standard_margin"
             android:background="?attr/colorPrimary"
             android:minHeight="?attr/actionBarSize"
             app:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-            <ImageView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:contentDescription="@string/image_gads_logo"
-                app:srcCompat="@drawable/gads_logo_a" />
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/toolbar_back"
+                    android:layout_marginTop="@dimen/standard_margin"
+                    android:layout_width="@dimen/submission_cancel_button"
+                    android:layout_height="@dimen/submission_cancel_button"
+                    android:background="@drawable/ic_baseline_arrow_back_24"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:contentDescription="@string/image_gads_logo"
+                        app:srcCompat="@drawable/gads_logo_a" />
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/project_submission"
+                        android:textAlignment="center"
+                        android:textColor="@color/color_orange"
+                        android:textSize="@dimen/text_size_submission_title"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/standard_margin"
+                        android:background="@drawable/ic_gradient_line"/>
+                </LinearLayout>
+            </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/project_submission"
-            android:textAlignment="center"
-            android:textColor="@color/color_orange"
-            android:textSize="@dimen/text_size_submission_title"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/standard_margin"
-            android:background="@drawable/ic_gradient_line"/>
 
     </LinearLayout>
 

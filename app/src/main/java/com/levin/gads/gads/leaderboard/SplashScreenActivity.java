@@ -10,7 +10,7 @@ public class SplashScreenActivity extends AppCompatActivity {
 
     private static final String TAG = "SplashScreenActivity";
 
-    public static final int DELAY_MILLIS = 3000;
+    public static final int DELAY_MILLIS = 2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
