@@ -2,16 +2,16 @@
 
 A sample Android Project that implements a mobile design of the GADS 2020 Leaderboard
 
-# Environmentnvironment
+## Environmentnvironment
 
-## Android Studio : 4.0.1
-## JDK : 1.8.0
+> Android Studio : 4.0.1
+> JDK : 1.8.0
 
-# Useful libraries
+## Useful libraries
 
-## Retrofit 2.5.0
-## Glide 4.9.0
-## GSON 2.5.0
+> Retrofit 2.5.0
+> Glide 4.9.0
+> GSON 2.5.0
 
 ## Screenshots
 
