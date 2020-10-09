@@ -2,7 +2,7 @@
 
 A sample Android Project that implements a mobile design of the GADS 2020 Leaderboard
 
-## Environmentnvironment
+## Environment
 
 > * Android Studio : 4.0.1
 > * JDK : 1.8.0
